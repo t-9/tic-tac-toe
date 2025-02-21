@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cells = document.querySelectorAll('.cell');
   const message = document.getElementById('message');
   const restartButton = document.getElementById('restart');
+  const themeToggle = document.getElementById('theme-toggle');
   const scoreX = document.getElementById('score-x');
   const scoreO = document.getElementById('score-o');
 
@@ -190,6 +191,11 @@ document.addEventListener('DOMContentLoaded', () => {
     aiLevel = document.getElementById('ai-level').value;
   };
 
+  const handleThemeToggle = () => {
+    document.body.classList.toggle('night');
+  };
+
   cells.forEach(cell => cell.addEventListener('click', handleCellClick));
   restartButton.addEventListener('click', handleRestart);
+  themeToggle.addEventListener('click', handleThemeToggle);
 });
